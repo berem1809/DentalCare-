@@ -1,0 +1,293 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color-scheme: light;
+  color: #0f172a;
+  background-color: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #ffffff 0%, #f0f9ff 100%);
+}
+
+/* Selection styling — dental sky-blue */
+::selection {
+  background-color: #0ea5e9;
+  color: white;
+}
+
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold tracking-tight;
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h3 {
+    @apply text-xl md:text-2xl;
+  }
+}
+
+@layer components {
+  /* Primary gradient button — dental sky blue */
+  .btn-primary {
+    @apply relative overflow-hidden bg-gradient-to-r from-primary-500 via-primary-600 to-primary-700 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300;
+    @apply hover:shadow-glow hover:-translate-y-0.5 hover:from-primary-600 hover:via-primary-700 hover:to-primary-800;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2;
+    @apply active:translate-y-0;
+  }
+  
+  .btn-primary::after {
+    content: '';
+    @apply absolute inset-0 bg-white opacity-0 transition-opacity duration-300;
+  }
+  
+  .btn-primary:hover::after {
+    @apply opacity-10;
+  }
+  
+  /* Secondary button */
+  .btn-secondary {
+    @apply bg-white text-primary-600 font-semibold py-3 px-6 rounded-xl border-2 border-primary-400 transition-all duration-300;
+    @apply hover:bg-primary-50 hover:border-primary-600 hover:-translate-y-0.5 hover:shadow-card;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2;
+    @apply active:translate-y-0;
+  }
+  
+  /* Ghost button */
+  .btn-ghost {
+    @apply text-primary-600 font-medium py-2 px-4 rounded-lg transition-all duration-200;
+    @apply hover:bg-primary-50;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-400;
+  }
+  
+  /* Glass card */
+  .glass-card {
+    @apply bg-white/85 backdrop-blur-md border border-primary-100/60 rounded-2xl shadow-glass;
+  }
+  
+  /* Premium card */
+  .premium-card {
+    @apply bg-white rounded-2xl shadow-card transition-all duration-300;
+    @apply hover:shadow-card-hover hover:-translate-y-1;
+  }
+  
+  /* Input field */
+  .input-field {
+    @apply w-full px-4 py-3 bg-neutral-50 border border-neutral-200 rounded-xl transition-all duration-200;
+    @apply focus:outline-none focus:ring-2 focus:ring-primary-400 focus:border-transparent focus:bg-white;
+    @apply placeholder:text-neutral-400;
+  }
+  
+  /* Form label */
+  .form-label {
+    @apply block text-sm font-medium text-neutral-700 mb-2;
+  }
+  
+  /* Section title */
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-neutral-900 mb-4;
+  }
+  
+  /* Section subtitle */
+  .section-subtitle {
+    @apply text-lg md:text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed;
+  }
+  
+  /* Gradient text — dental sky-blue to teal */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-500 via-secondary-500 to-primary-700 bg-clip-text text-transparent;
+  }
+  
+  /* Dental badge */
+  .health-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+    @apply bg-primary-100 text-primary-700 border border-primary-200;
+  }
+  
+  /* Feature icon container */
+  .icon-container {
+    @apply w-16 h-16 rounded-2xl flex items-center justify-center transition-all duration-300;
+    @apply bg-gradient-to-br from-primary-100 to-primary-50;
+  }
+  
+  .icon-container:hover {
+    @apply shadow-glow scale-105;
+  }
+  
+  /* Animated underline */
+  .animated-underline {
+    @apply relative;
+  }
+  
+  .animated-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-primary-500 transition-all duration-300;
+  }
+  
+  .animated-underline:hover::after {
+    @apply w-full;
+  }
+  
+  /* Loading shimmer */
+  .shimmer {
+    @apply animate-shimmer bg-gradient-to-r from-neutral-200 via-neutral-100 to-neutral-200 bg-[length:200%_100%];
+  }
+
+  /* Feature card */
+  .feature-card {
+    @apply bg-white rounded-2xl shadow-card transition-all duration-300 hover:shadow-card-hover hover:-translate-y-1 border border-transparent hover:border-primary-100;
+  }
+}
+
+/* Hero section background — dental freshness */
+.hero-section {
+  background: 
+    radial-gradient(ellipse 80% 50% at 50% -20%, rgba(14, 165, 233, 0.12), transparent),
+    radial-gradient(ellipse 60% 50% at 80% 50%, rgba(20, 184, 166, 0.08), transparent),
+    radial-gradient(ellipse 60% 40% at 20% 80%, rgba(14, 165, 233, 0.06), transparent);
+}
+
+/* Hero image with dental gradient overlay */
+.hero-image {
+  background: 
+    radial-gradient(ellipse 80% 60% at 50% 0%, rgba(14, 165, 233, 0.10), transparent),
+    radial-gradient(ellipse 50% 40% at 90% 50%, rgba(20, 184, 166, 0.08), transparent),
+    linear-gradient(180deg, #f0f9ff 0%, #ffffff 60%, #f0fdfa 100%);
+}
+
+/* Mesh gradient background */
+.mesh-bg {
+  background: 
+    radial-gradient(at 40% 20%, rgba(14, 165, 233, 0.12) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(20, 184, 166, 0.10) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(14, 165, 233, 0.06) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(20, 184, 166, 0.06) 0px, transparent 50%);
+}
+
+/* Animated gradient border */
+.gradient-border {
+  position: relative;
+  background: white;
+  border-radius: 1rem;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  background: linear-gradient(135deg, #0ea5e9, #14b8a6, #0369a1, #0ea5e9);
+  background-size: 300% 300%;
+  border-radius: inherit;
+  animation: gradientShift 4s ease infinite;
+  z-index: -1;
+}
+
+@keyframes gradientShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Premium scrollbar — dental sky blue */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 100%);
+  border-radius: 5px;
+  border: 2px solid #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+}
+
+/* Floating animation for decorative elements */
+@keyframes floating {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(2deg); }
+  50% { transform: translateY(-5px) rotate(0deg); }
+  75% { transform: translateY(-15px) rotate(-2deg); }
+}
+
+.floating-element {
+  animation: floating 6s ease-in-out infinite;
+}
+
+/* Pulse ring animation */
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.3; }
+  100% { transform: scale(1); opacity: 0.5; }
+}
+
+.pulse-ring {
+  animation: pulse-ring 2s ease-in-out infinite;
+}
+
+/* Stagger animations for lists */
+.stagger-item:nth-child(1) { animation-delay: 0.1s; }
+.stagger-item:nth-child(2) { animation-delay: 0.2s; }
+.stagger-item:nth-child(3) { animation-delay: 0.3s; }
+.stagger-item:nth-child(4) { animation-delay: 0.4s; }
+.stagger-item:nth-child(5) { animation-delay: 0.5s; }
+.stagger-item:nth-child(6) { animation-delay: 0.6s; }
+.stagger-item:nth-child(7) { animation-delay: 0.7s; }
+.stagger-item:nth-child(8) { animation-delay: 0.8s; }
+
+/* Glow effect on focus */
+.glow-on-focus:focus-within {
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+}
+
+/* Text gradient animation */
+.animate-gradient-text {
+  background-size: 200% auto;
+  animation: textGradient 3s linear infinite;
+}
+
+@keyframes textGradient {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Stat card hover */
+.stat-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.stat-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(14, 165, 233, 0.18);
+}
