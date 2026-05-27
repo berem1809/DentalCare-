@@ -1,126 +1,126 @@
 import { useParams } from 'react-router-dom'
-import { FaMapMarkerAlt, FaPhone, FaGlobe, FaStar, FaLeaf, FaYinYang, FaHospital, FaCalendar, FaClock, FaUserMd } from 'react-icons/fa'
+import { FaMapMarkerAlt, FaPhone, FaGlobe, FaStar, FaTooth, FaHospital, FaCalendar, FaClock, FaUserMd } from 'react-icons/fa'
 
-// Mock data for dispensaries with comprehensive details
+// Mock data for dental clinics with comprehensive details
 const mockDispensaries = [
   {
     id: 1,
-    name: "Wellness Ayurveda Center",
-    location: "123 Kahatwoita St, Nittambuwa, WP",
-    discipline: "ayurvedic",
-    rating: 4.8,
-    reviewCount: 124,
-    mainImage: "https://images.pexels.com/photos/3735215/pexels-photo-3735215.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+    name: "SmileCare Dental Clinic",
+    location: "123 Galle Road, Colombo 3, WP",
+    discipline: "general",
+    rating: 4.9,
+    reviewCount: 210,
+    mainImage: "https://images.pexels.com/photos/5322205/pexels-photo-5322205.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
     galleryImages: [
-      "https://images.pexels.com/photos/3735217/pexels-photo-3735217.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/3735220/pexels-photo-3735220.jpeg?auto=compress&cs=tinysrgb&w=800",
-      "https://images.pexels.com/photos/3735225/pexels-photo-3735225.jpeg?auto=compress&cs=tinysrgb&w=800"
+      "https://images.pexels.com/photos/5322317/pexels-photo-5322317.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/5336998/pexels-photo-5336998.jpeg?auto=compress&cs=tinysrgb&w=800",
+      "https://images.pexels.com/photos/6189765/pexels-photo-6189765.jpeg?auto=compress&cs=tinysrgb&w=800"
     ],
-    description: "Specializing in traditional Ayurvedic treatments with modern amenities. Our center combines ancient wisdom with contemporary healthcare practices to provide holistic healing experiences.",
-    phone: "+1 (415) 555-1234",
-    website: "https://wellness-ayurveda.example.com",
-    email: "info@wellness-ayurveda.example.com",
+    description: "SmileCare Dental Clinic offers modern dental care for the whole family, including preventive checkups, cosmetic dentistry, and restorative treatments in a comfortable environment.",
+    phone: "+94 11 234 5678",
+    website: "https://smilecare-dental.example.com",
+    email: "contact@smilecare-dental.example.com",
     openingHours: {
-      monday: "9:00 AM - 6:00 PM",
-      tuesday: "9:00 AM - 6:00 PM",
-      wednesday: "9:00 AM - 6:00 PM",
-      thursday: "9:00 AM - 6:00 PM",
-      friday: "9:00 AM - 4:00 PM",
-      saturday: "10:00 AM - 2:00 PM",
+      monday: "8:00 AM - 6:00 PM",
+      tuesday: "8:00 AM - 6:00 PM",
+      wednesday: "8:00 AM - 6:00 PM",
+      thursday: "8:00 AM - 6:00 PM",
+      friday: "8:00 AM - 5:00 PM",
+      saturday: "9:00 AM - 1:00 PM",
       sunday: "Closed"
     },
     facilities: [
       {
-        name: "Panchakarma Treatment Rooms",
-        description: "Specialized rooms for traditional cleansing therapies"
+        name: "Digital X-Ray Suite",
+        description: "Advanced imaging for accurate diagnosis and treatment planning"
       },
       {
-        name: "Meditation Hall",
-        description: "Peaceful space for guided meditation sessions"
+        name: "Cosmetic Dentistry Lab",
+        description: "Personalized veneers, whitening and smile makeovers"
       },
       {
-        name: "Herbal Medicine Dispensary",
-        description: "Custom-prepared Ayurvedic medicines and supplements"
+        name: "Children's Care Room",
+        description: "Comfortable space designed for young patients"
       },
       {
-        name: "Consultation Rooms",
-        description: "Private rooms for one-on-one consultations"
+        name: "Private Consultation Rooms",
+        description: "One-on-one consultation with experienced dentists"
       },
       {
-        name: "Yoga Studio",
-        description: "Fully equipped studio for therapeutic yoga sessions"
+        name: "Emergency Dental Service",
+        description: "Same-day treatment for urgent dental problems"
       }
     ],
     doctors: [
       {
         id: 1,
-        name: "Dr. Rafath Zanar",
-        specialization: "Ayurvedic Medicine",
-        experience: "15 years",
-        image: "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=300",
+        name: "Dr. Maya Fernando",
+        specialization: "General Dentist",
+        experience: "12 years",
+        image: "https://images.pexels.com/photos/3845769/pexels-photo-3845769.jpeg?auto=compress&cs=tinysrgb&w=300",
         rating: 4.9,
-        reviewCount: 89,
-        availability: "Mon-Fri, 9:00 AM - 5:00 PM",
+        reviewCount: 145,
+        availability: "Mon-Fri, 8:30 AM - 5:30 PM",
         education: [
-          "BAMS - Kelani University",
-          "MD Ayurveda - Gampaha Wickramarachchi University"
+          "BDS - University of Peradeniya",
+          "MSc in Prosthodontics"
         ],
         specialties: [
-          "Panchakarma",
-          "Respiratory Disorders",
-          "Joint Pain Management"
+          "Routine Dentistry",
+          "Smile Makeovers",
+          "Tooth Restorations"
         ],
-        languages: ["English", "Hindi", "Gujarati"],
+        languages: ["English", "Sinhala"],
         reviews: [
           {
             id: 1,
             rating: 5,
-            comment: "Dr. Zanars's treatment helped me recover from chronic back pain. His approach is very thorough and patient-centered.",
-            author: "John D.",
-            date: "2024-02-15"
+            comment: "Dr. Maya made my dental appointment comfortable and explained every step clearly. My teeth look amazing!",
+            author: "Nisha R.",
+            date: "2024-05-10"
           },
           {
             id: 2,
             rating: 5,
-            comment: "Excellent doctor with deep knowledge of Ayurvedic principles. Highly recommended!",
-            author: "Sarah M.",
-            date: "2024-02-10"
+            comment: "Highly skilled dentist with a gentle approach. Great experience for both adults and children.",
+            author: "Arjun P.",
+            date: "2024-05-05"
           }
         ]
       },
       {
         id: 2,
-        name: "Dr. Thooba Banu",
-        specialization: "Ayurvedic Specialist",
-        experience: "12 years",
-        image: "https://images.pexels.com/photos/5407206/pexels-photo-5407206.jpeg?auto=compress&cs=tinysrgb&w=300",
-        rating: 4.7,
-        reviewCount: 65,
-        availability: "Mon-Sat, 10:00 AM - 6:00 PM",
+        name: "Dr. Priya Jayawardena",
+        specialization: "Orthodontist",
+        experience: "10 years",
+        image: "https://images.pexels.com/photos/3872355/pexels-photo-3872355.jpeg?auto=compress&cs=tinysrgb&w=300",
+        rating: 4.8,
+        reviewCount: 110,
+        availability: "Mon-Sat, 9:00 AM - 4:00 PM",
         education: [
-          "BAMS - Colombo University",
-          "PG Diploma in Panchakarma"
+          "BDS - University of Colombo",
+          "MOrth - Orthodontics"
         ],
         specialties: [
-          "Panchakarma Therapy",
-          "Skin Disorders",
-          "Stress Management"
+          "Braces",
+          "Invisalign",
+          "Jaw Alignment"
         ],
-        languages: ["English", "Hindi", "Marathi"],
+        languages: ["English", "Tamil"],
         reviews: [
           {
             id: 3,
             rating: 5,
-            comment: "Dr. Banu's panchakarma treatment was transformative. Very professional and caring approach.",
-            author: "Michael R.",
-            date: "2024-02-12"
+            comment: "Dr. Priya helped me get a perfect smile with braces. The clinic staff were very supportive throughout.",
+            author: "Hiran S.",
+            date: "2024-05-08"
           },
           {
             id: 4,
             rating: 4,
-            comment: "Great experience with skin treatment. Saw significant improvement in 3 months.",
-            author: "Lisa K.",
-            date: "2024-02-05"
+            comment: "Excellent orthodontic care and follow-up. Very satisfied with the results.",
+            author: "Amara K.",
+            date: "2024-05-02"
           }
         ]
       }
@@ -129,50 +129,50 @@ const mockDispensaries = [
       {
         id: 1,
         rating: 5,
-        comment: "Excellent facility with a calm and healing atmosphere. The staff is very knowledgeable and caring.",
-        author: "Robert M.",
-        date: "2024-02-18"
+        comment: "The staff were friendly and the treatment was professional. My teeth feel healthier than ever.",
+        author: "Sanjana M.",
+        date: "2024-05-12"
       },
       {
         id: 2,
         rating: 4,
-        comment: "Great experience with their panchakarma treatment. Very professional service.",
-        author: "Emily S.",
-        date: "2024-02-16"
+        comment: "Very clean clinic with modern equipment. Good choice for family dental care.",
+        author: "Kasun W.",
+        date: "2024-05-09"
       },
       {
         id: 3,
         rating: 5,
-        comment: "The herbal medicines prescribed worked wonders for my digestive issues.",
-        author: "David L.",
-        date: "2024-02-14"
+        comment: "Quick and painless root canal treatment. Highly recommended clinic.",
+        author: "Priyanka L.",
+        date: "2024-05-06"
       }
     ]
   },
-  // Add more dispensaries with similar detailed structure...
+  // Add more clinics with similar detailed structure...
 ]
 
 const getDisciplineIcon = (discipline) => {
   switch (discipline) {
-    case 'ayurvedic':
-      return <FaLeaf className="text-green-600" />
-    case 'homeopathic':
-      return <FaYinYang className="text-blue-600" />
-    case 'western':
-      return <FaHospital className="text-red-600" />
+    case 'general':
+      return <FaTooth className="text-sky-600" />
+    case 'orthodontics':
+      return <FaTooth className="text-amber-600" />
+    case 'pediatric':
+      return <FaTooth className="text-teal-600" />
     default:
-      return null
+      return <FaHospital className="text-red-600" />
   }
 }
 
 const getDisciplineName = (discipline) => {
   switch (discipline) {
-    case 'ayurvedic':
-      return 'Ayurvedic Medicine'
-    case 'homeopathic':
-      return 'Homeopathic Treatment'
-    case 'western':
-      return 'Western Medicine'
+    case 'general':
+      return 'General Dentistry'
+    case 'orthodontics':
+      return 'Orthodontics'
+    case 'pediatric':
+      return 'Pediatric Dentistry'
     default:
       return 'Unknown'
   }
@@ -186,8 +186,8 @@ const DispensaryDetailsPage = () => {
     return (
       <div className="container mx-auto px-4 py-8">
         <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-800">Dispensary not found</h2>
-          <p className="mt-2 text-gray-600">The dispensary you're looking for doesn't exist.</p>
+          <h2 className="text-2xl font-bold text-gray-800">Clinic not found</h2>
+          <p className="mt-2 text-gray-600">The dental clinic you're looking for doesn't exist.</p>
         </div>
       </div>
     )
@@ -199,8 +199,8 @@ const DispensaryDetailsPage = () => {
         {/* Main Image and Basic Info */}
         <div className="bg-white rounded-lg shadow-md overflow-hidden mb-8">
           <div className="relative h-96">
-            <img 
-              src={dispensary.mainImage} 
+            <img
+              src={dispensary.mainImage}
               alt={dispensary.name}
               className="w-full h-full object-cover"
             />
@@ -220,8 +220,8 @@ const DispensaryDetailsPage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {dispensary.galleryImages.map((image, index) => (
               <div key={index} className="rounded-lg overflow-hidden">
-                <img 
-                  src={image} 
+                <img
+                  src={image}
                   alt={`${dispensary.name} - Gallery ${index + 1}`}
                   className="w-full h-48 object-cover"
                 />
@@ -261,7 +261,7 @@ const DispensaryDetailsPage = () => {
                 </div>
                 <div className="flex items-center">
                   <FaGlobe className="text-gray-500 mr-2" />
-                  <a 
+                  <a
                     href={dispensary.website}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -293,7 +293,7 @@ const DispensaryDetailsPage = () => {
           <h2 className="text-2xl font-bold mb-6">Facilities & Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {dispensary.facilities.map((facility, index) => (
-              <div 
+              <div
                 key={index}
                 className="bg-gray-50 rounded-lg p-4"
               >
@@ -309,14 +309,14 @@ const DispensaryDetailsPage = () => {
           <h2 className="text-2xl font-bold mb-6">Our Doctors</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {dispensary.doctors.map(doctor => (
-              <div 
+              <div
                 key={doctor.id}
                 className="bg-white rounded-lg shadow-md overflow-hidden border border-gray-200"
               >
                 <div className="md:flex">
                   <div className="md:w-1/3">
-                    <img 
-                      src={doctor.image} 
+                    <img
+                      src={doctor.image}
                       alt={doctor.name}
                       className="w-full h-full object-cover"
                     />
@@ -324,7 +324,7 @@ const DispensaryDetailsPage = () => {
                   <div className="p-6 md:w-2/3">
                     <h3 className="text-xl font-semibold mb-2">{doctor.name}</h3>
                     <p className="text-primary-600 font-medium mb-2">{doctor.specialization}</p>
-                    
+
                     <div className="flex items-center mb-4">
                       <div className="flex text-yellow-400">
                         <FaStar />
@@ -357,7 +357,7 @@ const DispensaryDetailsPage = () => {
                       <h4 className="font-medium mb-2">Specialties</h4>
                       <div className="flex flex-wrap gap-2">
                         {doctor.specialties.map((specialty, index) => (
-                          <span 
+                          <span
                             key={index}
                             className="bg-primary-50 text-primary-700 text-sm px-3 py-1 rounded-full"
                           >
@@ -382,8 +382,8 @@ const DispensaryDetailsPage = () => {
                         <div className="flex items-center mb-2">
                           <div className="flex text-yellow-400">
                             {[...Array(5)].map((_, i) => (
-                              <FaStar 
-                                key={i} 
+                              <FaStar
+                                key={i}
                                 className={i < review.rating ? "text-yellow-400" : "text-gray-300"}
                               />
                             ))}
@@ -401,10 +401,10 @@ const DispensaryDetailsPage = () => {
           </div>
         </div>
 
-        {/* Dispensary Reviews */}
+        {/* Clinic Reviews */}
         <div className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-bold mb-6">
-            Reviews
+            Clinic Reviews
             <span className="text-gray-500 text-lg ml-2">
               ({dispensary.reviews.length})
             </span>
@@ -415,8 +415,8 @@ const DispensaryDetailsPage = () => {
                 <div className="flex items-center mb-2">
                   <div className="flex text-yellow-400">
                     {[...Array(5)].map((_, i) => (
-                      <FaStar 
-                        key={i} 
+                      <FaStar
+                        key={i}
                         className={i < review.rating ? "text-yellow-400" : "text-gray-300"}
                       />
                     ))}

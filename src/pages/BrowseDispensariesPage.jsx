@@ -1,40 +1,40 @@
 // BrowseDispensariesPage.jsx - Premium Browse Page
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { FaSearch, FaLeaf, FaYinYang, FaHospital, FaStar, FaMapMarkerAlt, FaArrowRight, FaFilter } from 'react-icons/fa'
+import { FaSearch, FaTooth, FaHospital, FaStar, FaMapMarkerAlt, FaArrowRight, FaFilter } from 'react-icons/fa'
 
 // Mock data 
 const mockDispensaries = [
   {
     id: 1,
-    name: "Wellness Ayurveda Center",
-    location: "123 Kahatwoita St, Nittambuwa, WP",
-    discipline: "ayurvedic",
-    rating: 4.8,
-    reviewCount: 124,
-    image: "https://images.unsplash.com/photo-1731597076108-f3bbe268162f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    name: "SmileCare Dental Clinic",
+    location: "123 Galle Road, Colombo 3, WP",
+    discipline: "general",
+    rating: 4.9,
+    reviewCount: 210,
+    image: "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     recommended: true,
     featured: true
   },
   {
     id: 2,
-    name: "Homeopathic Harmony",
-    location: "456 Nawala Way, Colombo, WP",
-    discipline: "homeopathic",
-    rating: 4.5,
-    reviewCount: 89,
-    image: "https://images.unsplash.com/photo-1512867957657-38dbae50a35b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    name: "Bright Orthodontics",
+    location: "456 Kynsey Terrace, Colombo 5, WP",
+    discipline: "orthodontics",
+    rating: 4.7,
+    reviewCount: 132,
+    image: "https://images.unsplash.com/photo-1588776814546-1a09d7a5b8d4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     recommended: true,
     featured: false
   },
   {
     id: 3,
-    name: "City Medical Center",
-    location: "789 Bogaha Road, Colombo 8, WP",
-    discipline: "western",
-    rating: 4.7,
-    reviewCount: 215,
-    image: "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+    name: "Happy Kids Dental",
+    location: "789 Flower Road, Colombo 7, WP",
+    discipline: "pediatric",
+    rating: 4.6,
+    reviewCount: 180,
+    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     recommended: false,
     featured: true
   },
@@ -45,12 +45,12 @@ const DispensaryCard = ({ dispensary }) => {
 
   const getDisciplineInfo = (discipline) => {
     switch (discipline) {
-      case 'ayurvedic':
-        return { icon: FaLeaf, color: 'text-green-600', bg: 'bg-green-100', name: 'Ayurvedic' }
-      case 'homeopathic':
-        return { icon: FaYinYang, color: 'text-blue-600', bg: 'bg-blue-100', name: 'Homeopathic' }
-      case 'western':
-        return { icon: FaHospital, color: 'text-rose-600', bg: 'bg-rose-100', name: 'Western' }
+      case 'general':
+        return { icon: FaTooth, color: 'text-sky-600', bg: 'bg-sky-100', name: 'General Dentistry' }
+      case 'orthodontics':
+        return { icon: FaTooth, color: 'text-amber-600', bg: 'bg-amber-100', name: 'Orthodontics' }
+      case 'pediatric':
+        return { icon: FaTooth, color: 'text-teal-600', bg: 'bg-teal-100', name: 'Pediatric Dentistry' }
       default:
         return { icon: FaHospital, color: 'text-neutral-600', bg: 'bg-neutral-100', name: 'Unknown' }
     }
@@ -127,9 +127,9 @@ const BrowseDispensariesPage = () => {
 
   const filters = [
     { id: 'all', label: 'All', icon: null },
-    { id: 'ayurvedic', label: 'Ayurvedic', icon: FaLeaf, color: 'text-green-600' },
-    { id: 'homeopathic', label: 'Homeopathic', icon: FaYinYang, color: 'text-blue-600' },
-    { id: 'western', label: 'Western', icon: FaHospital, color: 'text-rose-600' },
+    { id: 'general', label: 'General', icon: FaTooth, color: 'text-sky-600' },
+    { id: 'orthodontics', label: 'Orthodontics', icon: FaTooth, color: 'text-amber-600' },
+    { id: 'pediatric', label: 'Pediatric', icon: FaTooth, color: 'text-teal-600' },
   ]
 
   const recommendedDispensaries = mockDispensaries.filter(d => d.recommended)
@@ -147,10 +147,10 @@ const BrowseDispensariesPage = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-3xl mx-auto text-center mb-10">
             <h1 className="text-3xl md:text-4xl font-display font-bold text-neutral-900 mb-4">
-              Explore <span className="gradient-text">Wellness Centers</span>
+              Explore <span className="gradient-text">Dental Clinics</span>
             </h1>
             <p className="text-lg text-neutral-600">
-              Discover trusted healthcare providers and wellness centers near you
+              Discover trusted dentists and dental clinics near you
             </p>
           </div>
 
@@ -191,8 +191,8 @@ const BrowseDispensariesPage = () => {
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
               className={`flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${activeFilter === filter.id
-                  ? 'bg-primary-500 text-white shadow-glow'
-                  : 'bg-white text-neutral-600 border border-neutral-200 hover:border-primary-300 hover:bg-primary-50'
+                ? 'bg-primary-500 text-white shadow-glow'
+                : 'bg-white text-neutral-600 border border-neutral-200 hover:border-primary-300 hover:bg-primary-50'
                 }`}
             >
               {filter.icon && <filter.icon className={activeFilter === filter.id ? 'text-white' : filter.color} />}
@@ -224,7 +224,7 @@ const BrowseDispensariesPage = () => {
         <section>
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-2xl font-display font-bold text-neutral-900">
-              {activeFilter === 'all' ? 'All Wellness Centers' : `${filters.find(f => f.id === activeFilter)?.label} Centers`}
+              {activeFilter === 'all' ? 'All Dental Clinics' : `${filters.find(f => f.id === activeFilter)?.label} Clinics`}
             </h2>
             <span className="text-neutral-500 text-sm">{filteredDispensaries.length} results</span>
           </div>
