@@ -12,6 +12,14 @@ dist
 dist-ssr
 *.local
 
+# Ignore nested project artifacts
+/doc4all-fr-main/.git
+/doc4all-fr-main/node_modules
+/BFF/target
+/BFF/.mvn
+/springboot-development/target
+/springboot-development/.mvn
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
